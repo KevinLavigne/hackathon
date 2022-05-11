@@ -2,7 +2,7 @@ import React from "react";
 import ReactDOM from "react-dom";
 
 import App from "./App";
-import ExportContext from "@contexts/Context";
+import ExportContext from "./contexts/Context";
 
 ReactDOM.render(
   <React.StrictMode>

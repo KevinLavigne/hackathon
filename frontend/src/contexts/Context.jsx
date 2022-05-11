@@ -7,7 +7,7 @@ function Provider({ children }) {
   const [state2, setState2] = useState([]);
 
   return (
-    <PanierContext.Provider
+    <Context.Provider
       value={{
         state,
         setState,
@@ -16,7 +16,7 @@ function Provider({ children }) {
       }}
     >
       {children}
-    </PanierContext.Provider>
+    </Context.Provider>
   );
 }
 const ExportContext = {
