@@ -1,16 +1,21 @@
 import React from "react";
 import ActionCard from "../components/ActionCard";
 import ConvertGoogleSheet from "../services/ConvertGoogleSheet";
+import ExportContext from "../contexts/Context";
 
 function Page2() {
-  const [selectedCategory, setselectedCategory] = React.useState("---");
+  const [selectedCategory, setselectedCategory] = React.useState("Tous");
+  const [aFaire, setaFaire] = React.useState("TRUE");
+  // const [pg2, setPg2] = useState([]);
+  // console.warn(`${pg2} ${setPg2}`);
+  const { actionsList, setActionsList } = React.useContext(
+    ExportContext.Context
+  );
   const actions = ConvertGoogleSheet(
     "https://docs.google.com/spreadsheets/d/e/2PACX-1vTsY9ig9iBPQKlyIXHq0bPzodjWiqdcp4WSIIcxAGtEJ-l4hJsIaoIiH_Tx4TUyFyoHviWrfpS7Wbs2/pub?output=csv"
   );
-  // const [pg2, setPg2] = useState([]);
-  // console.warn(`${pg2} ${setPg2}`);
+  setActionsList(actions);
 
-  console.warn(actions[0]);
   const CategoryList = [
     "Domicile",
     "Nourriture",
@@ -23,34 +28,63 @@ function Page2() {
     "Numerique",
   ];
 
+  const ValideList = ["Non validé"];
+
   const handleOnChangeCategoryList = (e) => {
     setselectedCategory(e.target.value);
   };
 
+  const handleOnChangeValideList = (e) => {
+    setaFaire(e.target.value === "Tous" ? "TRUE" : "FALSE");
+  };
   return (
     <div>
       <div>Page2</div>
       <div className="page-action-selecteur">
-        <form className="page-action-form">
-          <label htmlFor="category-select">
-            Catégorie :{" "}
-            <select
-              id="category-select"
-              onChange={(e) => handleOnChangeCategoryList(e)}
-            >
-              <option value="---">---</option>
-              {CategoryList.map((category) => {
-                return <option value={category}>{category}</option>;
-              })}
-            </select>
-          </label>
-        </form>
+        <div>
+          <form className="page-action-form">
+            <label htmlFor="category-select">
+              <select
+                id="category-select"
+                onChange={(e) => handleOnChangeCategoryList(e)}
+              >
+                <option value="Tous" selected>
+                  Toutes les catégories
+                </option>
+                {CategoryList.map((category) => {
+                  return <option value={category}>{category}</option>;
+                })}
+              </select>
+            </label>
+          </form>
+        </div>
+        <div>
+          <form className="page-action-form">
+            <label htmlFor="category-select">
+              <select
+                id="category-select"
+                onChange={(e) => handleOnChangeValideList(e)}
+              >
+                <option value="Tous" selected>
+                  Tous
+                </option>
+                {ValideList.map((category) => {
+                  return <option value={category}>{category}</option>;
+                })}
+              </select>
+            </label>
+          </form>
+        </div>
       </div>
-      {actions.length > 0 &&
-        actions
+      {actionsList.length > 0 &&
+        actionsList
+          .filter((action) =>
+            aFaire === "TRUE" ? true : action.fait === "FALSE"
+          )
           .filter(
             (action) =>
-              selectedCategory === "---" || action.category === selectedCategory
+              selectedCategory === "Tous" ||
+              action.category === selectedCategory
           )
           .map((action) => <ActionCard action={action} />)}
     </div>

@@ -1,8 +1,10 @@
-import { useState } from "react";
+import React from "react";
+import ExportContext from "../contexts/Context";
 
 function Page1() {
-  const [pg1, setPg1] = useState([]);
-  console.warn(`${pg1} ${setPg1}`);
+  const { actionsList } = React.useContext(ExportContext.Context);
+
+  console.warn(actionsList);
   return <div>Page1</div>;
 }
 export default Page1;

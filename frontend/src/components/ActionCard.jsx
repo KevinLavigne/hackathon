@@ -9,10 +9,27 @@ import {
 } from "react-icons/fa";
 import { GiKnifeFork, GiWaterRecycling, GiElectric } from "react-icons/gi";
 import { MdWork, MdFamilyRestroom, MdComputer } from "react-icons/md";
+import ExportContext from "../contexts/Context";
 
 function ActionCard({ action }) {
+  const { actionsList, setActionsList } = React.useContext(
+    ExportContext.Context
+  );
+
+  const [laclass, setLaClass] = React.useState("action-card-container");
+  const [classCheck, setClassCheck] = React.useState("block");
+  const handleOnClickValidate = () => {
+    setLaClass("action-card-container-fait");
+    setClassCheck("none");
+    const actionTemp = action;
+    actionTemp.fait = "TRUE";
+    React.useEffect(() => {
+      setActionsList(actionsList.splice(actionTemp.id - 1, 1, actionTemp));
+    }, []);
+  };
+
   return (
-    <div className="action-card-container">
+    <div className={`${laclass}`}>
       <details>
         <summary className="action-card-summary">
           <div className="action-card-icon">
@@ -41,8 +58,12 @@ function ActionCard({ action }) {
           <div className="action-card-text">
             <p>{action.description}</p>
           </div>
-          <div className="action-card-validate">
-            <FaCheck />
+          <div
+            className="action-card-validate"
+            onClick={() => handleOnClickValidate()}
+            aria-hidden="true"
+          >
+            <FaCheck className={`${classCheck}`} />
           </div>
         </div>
       </details>
