@@ -59,6 +59,32 @@ button {
   font-size: calc(10px + 2vmin);
 }
 
+/* Couleurs et prorioétés images page profil WENDY */
+.avatar {
+  height: 100px;
+  width: 100px;
+}
+
+.color-1 {
+  color:#f0edee;
+}
+
+.color-2 {
+  color:#C97064;
+}
+
+.color-3 {
+  color:#68A357;
+}
+
+.color-4 {
+  color:#32965D;
+}
+.backgroundcolor-4 {
+  background-color:#32965D;
+}
+
+
 .bg-navbar{
   background-color: #F0EDEE;
 }
