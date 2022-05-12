@@ -4,6 +4,7 @@ import React, { useState } from "react";
 import "./Concept.css";
 import photoHome from "../assets/picenvironment.jpg";
 
+/* eslint-disable */
 function Concept() {
   const [isFlipped, setIsFlipped] = useState(false);
 
