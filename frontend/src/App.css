@@ -58,3 +58,10 @@ code {
 button {
   font-size: calc(10px + 2vmin);
 }
+.bg-color-comparatif{
+  background-color: #32965D;
+  width: 100%;
+}
+.bg-profilCard{
+  background-color: #68A357;
+}
