@@ -1,6 +1,9 @@
 /**
  *  options de titrage du graphique
  */
+
+// import jason from "./data/users.json";
+
 const options = {
   responsive: true,
   scales: {
@@ -10,13 +13,13 @@ const options = {
         // For a category axis, the val is the index so the lookup via getLabelForValue is needed
         callback: function (val, index) {
           // affichage d'une année, une colonne sur deux.
-          return index % 3 === 0 ? this.getLabelForValue(val) : "";
+          return this.getLabelForValue(val);
         },
       },
       display: true,
       title: {
         display: false,
-        text: "Année",
+        text: "Semaines",
       },
     },
     y: {
@@ -31,7 +34,7 @@ const options = {
       title: {
         // titre de l'axe vertical
         display: true,
-        text: `Concentration de CO\u2082 en ppm`,
+        text: ``,
       },
     },
   },
@@ -41,7 +44,7 @@ const options = {
     },
     title: {
       display: true,
-      text: ``, // titre par défaut, remplacé via prepaConfig
+      text: `titre`, // titre par défaut, remplacé via prepaConfig
     },
   },
 };
@@ -53,26 +56,25 @@ const dataModel = {
   labels: [],
   datasets: [
     {
-      label: "Valeurs quotidiennes (cycle)", // titre du premier graphique
+      label: "Votre écoScore", // titre du premier graphique
       data: [],
       pointStyle: "dash",
       radius: 0.1,
-      borderColor: "rgba(136, 78, 160,0.8)",
-      backgroundColor: "rgba(136, 78, 160, 0.8)",
+      borderColor: "rgb(104, 163, 87)",
+      backgroundColor: "rgb(104, 163, 87)",
     },
     {
-      label: "Tendance moyenne (évolution)", // titre du second graphique
+      label: "Moyenne des utilisateurs", // titre du second graphique
       data: [],
       pointStyle: "dash",
-      borderColor: "rgba(52,73,94, 0.8)", // "rgb(93, 109, 126)",
-      backgroundColor: "rgba(52, 73, 94, 0.8)",
+      borderColor: "rgb(50, 150, 93)", // "rgb(93, 109, 126)",
+      backgroundColor: "rgb(50, 150, 93)",
     },
   ],
 };
 
-const apiOnline = "https://global-warming.org/api/co2-api";
-const apiLocale = "./datasets/co2.json";
+const apiLocale = "./users.json";
 
-const reglages = { options, dataModel, apiOnline, apiLocale };
+const reglages = { options, dataModel, apiLocale };
 
 export default reglages;

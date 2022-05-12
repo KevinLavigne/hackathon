@@ -10,8 +10,8 @@ import {
   Tooltip,
   Legend,
 } from "chart.js";
-
-import reglages from "../options/options_CO2";
+import jason from "../data/users.json";
+import reglages from "../data/optionsGraphique";
 
 ChartJS.register(
   CategoryScale,
@@ -23,13 +23,11 @@ ChartJS.register(
   Legend
 );
 
-function ChartsCO2() {
+function Graphique() {
   const [dataSet, setDataSet] = useState(reglages.dataModel);
   const prepaConfig = (data) => {
     // légendage
-    reglages.options.plugins.title.text = `Concentration de Dioxyde de Carbone dans l'atmosphère (de ${
-      data[0].year
-    } à ${data[data.length - 1].year})`;
+    reglages.options.plugins.title.text = `Vos engagements depuis le ${data.begin}`;
   };
 
   /**
@@ -40,9 +38,8 @@ function ChartsCO2() {
     /** Récupération du jeu de dates */
     const dataSetProv = { ...dataSet };
     data.forEach((el) => {
-      dataSetProv.labels.push(el.year);
-      dataSetProv.datasets[0].data.push(el.cycle);
-      dataSetProv.datasets[1].data.push(el.trend);
+      dataSetProv.labels.push(el.week);
+      dataSetProv.datasets[0].data.push(el.taken.length);
     });
     setDataSet(dataSetProv);
   };
@@ -53,21 +50,22 @@ function ChartsCO2() {
    * @param {api} url
    * @param {function} callback
    */
-  const getStaticData = (url, callback) => {
-    fetch(url)
-      .then((res) => res.json())
-      .then((data) => {
-        prepareDataSet(data.co2);
-        prepaConfig(data.co2);
-      })
-      // ternaire de fetch des données locales en cas d'erreur
-      .catch((err) =>
-        callback ? callback(reglages.apiLocale) : console.error(err)
-      );
+  const getStaticData = (jason) => {
+    const activUser = 1;
+    // fetch(url)
+    //   .then((res) => res.json())
+    //   .then((data) => {
+    prepareDataSet(jason.user[activUser].actions);
+    prepaConfig(jason.user[activUser]);
+    // })
+    // ternaire de fetch des données locales en cas d'erreur
+    // .catch((err) =>
+    //   callback ? callback(reglages.apiLocale) : console.error(err)
+    // );
   };
 
   useEffect(() => {
-    getStaticData(reglages.apiOnline, getStaticData);
+    getStaticData(jason);
   }, []);
   return (
     // affichage du composant graphique
@@ -78,4 +76,4 @@ function ChartsCO2() {
     </div>
   );
 }
-export default ChartsCO2;
+export default Graphique;
