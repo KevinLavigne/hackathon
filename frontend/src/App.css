@@ -58,6 +58,13 @@ code {
 button {
   font-size: calc(10px + 2vmin);
 }
+.bg-color-comparatif{
+  background-color: #32965D;
+  width: 100%;
+}
+.bg-profilCard{
+  background-color: #68A357;
+}
 
 /* Couleurs et prorioétés images page profil WENDY */
 .avatar {
@@ -88,3 +95,4 @@ button {
 .bg-navbar{
   background-color: #F0EDEE;
 }
+

@@ -19,8 +19,8 @@ function NavBar() {
         <NavLink to="/Page2">
           <li className="text-xl">Page2</li>
         </NavLink>
-        <NavLink to="/Page3">
-          <li className="text-xl">Page3</li>
+        <NavLink to="/Comparatif">
+          <li>Comparatif</li>
         </NavLink>
       </ul>
     </div>
