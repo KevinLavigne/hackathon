@@ -16,11 +16,10 @@ function ActionCard({ action }) {
     ExportContext.Context
   );
 
-  const [laclass, setLaClass] = React.useState("action-card-container");
   const [classCheck, setClassCheck] = React.useState("block");
   const handleOnClickValidate = () => {
-    setLaClass("action-card-container-fait");
     setClassCheck("none");
+    console.warn(classCheck);
     const actionTemp = action;
     actionTemp.fait = "TRUE";
     React.useEffect(() => {
@@ -28,14 +27,14 @@ function ActionCard({ action }) {
     }, []);
   };
 
-  React.useEffect(() => {
-    if (action.fait === "TRUE") {
-      setLaClass("action-card-container-fait");
-    }
-  }, []);
-
   return (
-    <div className={`${laclass}`}>
+    <div
+      className={
+        action.fait === "TRUE"
+          ? "action-card-container-fait"
+          : "action-card-container"
+      }
+    >
       <details>
         <summary className="action-card-summary">
           <div className="action-card-icon">
@@ -69,7 +68,7 @@ function ActionCard({ action }) {
             onClick={() => handleOnClickValidate()}
             aria-hidden="true"
           >
-            <FaCheck className={`${classCheck}`} />
+            <FaCheck className={action.fait === "TRUE" ? "none" : "block"} />
           </div>
         </div>
       </details>

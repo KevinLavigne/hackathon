@@ -38,7 +38,6 @@ function Page2() {
   return (
     <div>
       <div>Page2</div>
-      <p>{actionsList[0].fait}</p>
       <div className="page-action-selecteur">
         <div>
           <form className="page-action-form">
