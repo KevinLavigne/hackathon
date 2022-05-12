@@ -58,41 +58,44 @@ code {
 button {
   font-size: calc(10px + 2vmin);
 }
-.bg-color-comparatif{
-  background-color: #32965D;
+.bg-color-comparatif {
+  background-color: #32965d;
   width: 100%;
 }
-.bg-profilCard{
-  background-color: #68A357;
+.bg-profilCard {
+  background-color: #68a357;
 }
 
 /* Couleurs et prorioétés images page profil WENDY */
 .avatar {
-  height: 100px;
-  width: 100px;
+  height: 200px;
+  width: 200px;
 }
 
 .color-1 {
-  color:#f0edee;
+  color: #f0edee;
 }
 
 .color-2 {
-  color:#C97064;
+  color: #c97064;
 }
 
 .color-3 {
-  color:#68A357;
+  color: #68a357;
 }
 
 .color-4 {
-  color:#32965D;
+  color: #32965d;
 }
+
+.backgroundcolor-3 {
+  background-color: #68a357;
+}
+
 .backgroundcolor-4 {
-  background-color:#32965D;
+  background-color: #32965d;
 }
 
-
-.bg-navbar{
-  background-color: #F0EDEE;
+.bg-navbar {
+  background-color: #f0edee;
 }
-
