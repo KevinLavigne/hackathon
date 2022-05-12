@@ -58,6 +58,12 @@ code {
 button {
   font-size: calc(10px + 2vmin);
 }
+
+
+.home-page {
+  background-color: #32965d;
+}
+
 .bg-color-comparatif {
   background-color: #32965d;
   width: 100%;
@@ -99,3 +105,4 @@ button {
 .bg-navbar {
   background-color: #f0edee;
 }
+
