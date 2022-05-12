@@ -1,5 +1,4 @@
 function ProfileCard({ firstname, lastname, score, avatar, inscription }) {
-  const test = inscription && inscription.split("/");
   return (
     <div className="w-2/5 rounded-xl flex flex-col bg-profilCard justify-around content-center items-center mb-10">
       <img

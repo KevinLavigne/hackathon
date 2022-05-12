@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 
 import ProfileCard from "../components/ProfileCard";
-import jason from "../data/users";
+import jason from "../data/users.json";
 
 function Comparatif() {
   const [array, setPg3] = useState([{}]);

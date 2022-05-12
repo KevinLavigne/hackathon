@@ -6,6 +6,7 @@ import Page2 from "./pages/Page2";
 import Comparatif from "./pages/Comparatif";
 import Error404 from "./pages/error404";
 import PageProfil from "./pages/PageProfil";
+import Footer from "./components/Footer";
 
 import "./App.css";
 
@@ -15,11 +16,12 @@ function App() {
       <NavBar />
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/PageProfil" element={<PageProfil />} />
+        <Route path="/Profil" element={<PageProfil />} />
         <Route path="/Page2" element={<Page2 />} />
         <Route path="/Comparatif" element={<Comparatif />} />
         <Route path="*" element={<Error404 />} />
       </Routes>
+      <Footer />
     </BrowserRouter>
   );
 }

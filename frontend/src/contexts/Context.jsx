@@ -1,18 +1,23 @@
-import { createContext, useState } from "react";
+import React, { createContext, useState } from "react";
+import ConvertGoogleSheet from "../services/ConvertGoogleSheet";
 
 const Context = createContext();
 
 function Provider({ children }) {
-  const [state, setState] = useState([]);
-  const [state2, setState2] = useState([]);
+  const [actionsList, setActionsList] = useState("");
+
+  const actions = ConvertGoogleSheet(
+    "https://docs.google.com/spreadsheets/d/e/2PACX-1vTsY9ig9iBPQKlyIXHq0bPzodjWiqdcp4WSIIcxAGtEJ-l4hJsIaoIiH_Tx4TUyFyoHviWrfpS7Wbs2/pub?output=csv"
+  );
+  React.useEffect(() => {
+    setActionsList(actions);
+  }, [actions]);
 
   return (
     <Context.Provider
       value={{
-        state,
-        setState,
-        state2,
-        setState2,
+        actionsList,
+        setActionsList,
       }}
     >
       {children}
