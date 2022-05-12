@@ -4,14 +4,26 @@
 
 .input-indentification {
   width: 15rem;
-  height: 2rem;
+  height: 2.5rem;
   background-color: #f0edee;
+  transition: 0.5s;
+  outline: none;
+}
+
+.input-indentification:focus {
+  border: 2px solid #c97064;
 }
 
 #button-indentification {
   background-color: #f0edee;
   width: 10rem;
-  height: 2rem;
+  height: 2.5rem;
   color: #68a357;
   font-weight: bold;
+}
+
+#button-indentification:focus {
+  background-color: #c97064;
+  color: #f0edee;
+  transition: 0.1s;
 }
