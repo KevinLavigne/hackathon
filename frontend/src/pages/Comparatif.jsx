@@ -7,7 +7,7 @@ function Comparatif() {
   const [array, setPg3] = useState([{}]);
 
   useEffect(() => {
-    setPg3(jason);
+    setPg3(jason.user);
   }, []);
   return (
     <div className="bg-color-comparatif">

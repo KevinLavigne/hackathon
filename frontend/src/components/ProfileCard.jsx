@@ -1,4 +1,6 @@
-function ProfileCard({ firstname, lastname, score, avatar, inscription }) {
+import avatar from "../assets/avatar.jpg";
+
+function ProfileCard({ firstname, lastname, score, inscription }) {
   return (
     <div className="w-2/5 rounded-xl flex flex-col bg-profilCard justify-around content-center items-center mb-10">
       <img

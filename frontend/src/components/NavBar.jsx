@@ -34,7 +34,7 @@ function NavBar() {
               Accueil
             </li>
           </NavLink>
-          <NavLink to="/PageProfil">
+          <NavLink to="/Profil">
             <li className="text-xl" onClick={() => handleShowMenu()}>
               Profil
             </li>
