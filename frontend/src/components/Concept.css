@@ -1,5 +1,4 @@
 .border-concept {
-  border: 2px solid #68a357;
   background-color: #68a357;
   color: #f0edee;
 }
@@ -7,4 +6,30 @@
 .border-concept h1 {
   font-weight: bold;
   font-size: 1.5rem;
+}
+
+.border-concept p {
+  font-size: 0.8rem;
+}
+
+#button-concept {
+  background-color: #f0edee;
+  width: 10rem;
+  height: 2.5rem;
+  color: #68a357;
+  font-weight: bold;
+  position : absolute;
+}
+#button-concept-2 {
+  background-color: #f0edee;
+  width: 8rem;
+  height: 2rem;
+  color: #68a357;
+  font-weight: bold;
+}
+
+#button-concept:focus {
+  background-color: #c97064;
+  color: #f0edee;
+  transition: 0.1s;
 }
