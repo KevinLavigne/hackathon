@@ -34,34 +34,50 @@ function Graphique() {
    * préparation des données de l'API
    * @param {array} data
    */
-  const prepareDataSet = (data) => {
-    /** Récupération du jeu de dates */
+  const prepareDataSet = (data, moyenne) => {
+    /** Récupération du jeu de données */
     const dataSetProv = { ...dataSet };
     data.forEach((el) => {
       dataSetProv.labels.push(el.week);
       dataSetProv.datasets[0].data.push(el.taken.length);
+      dataSetProv.datasets[1].data.push(moyenne[el[2]]);
     });
     setDataSet(dataSetProv);
   };
 
   /**
-   * fetch des données de l'API
-   * En cas d'erreur, lecture du json local
-   * @param {api} url
-   * @param {function} callback
+   * récupération des données du json
+   * @param {jason} json
    */
   const getStaticData = (jason) => {
+    /**
+     * données moyennes des utilisateurs   dataset[(un par un)].data[week]
+     */
+    const moyenne = [0];
+    for (let i = 0; i < jason.user.length - 1; i++) {
+      // user-s
+      for (let week = 0; week < jason.user[i].actions.length; week++) {
+        // console.warn(
+        //   `${jason.user[i].userFirstName}, week ${week}: ${jason.user[i].actions[week].taken.length}`
+        // );
+        console.warn(moyenne[week[0]]);
+        moyenne[week[0]] += jason.user[i].actions[week].taken.length;
+
+        moyenne[week[1]]++;
+        // console.warn(`${moyenne[week[0]]}/${moyenne[week[1]]}`);
+        //ajoute taken.length à moyenne[week[0]] && ajoute 1 à moyenne[week[1]]  moyenne[semaine[0]]= total de tous les utilisateurs   [1]  nombre d'uitlisateurs
+      }
+    }
+    for (let j = 0; j < moyenne.length; j++) {
+      moyenne[j[2]] = (moyenne[j[0]] / moyenne[j[1]]).toFixed(2);
+    }
+
     const activUser = 1;
-    // fetch(url)
-    //   .then((res) => res.json())
-    //   .then((data) => {
-    prepareDataSet(jason.user[activUser].actions);
+    /**
+     * données de l'utilisateur
+     */
+    prepareDataSet(jason.user[activUser].actions, moyenne); //
     prepaConfig(jason.user[activUser]);
-    // })
-    // ternaire de fetch des données locales en cas d'erreur
-    // .catch((err) =>
-    //   callback ? callback(reglages.apiLocale) : console.error(err)
-    // );
   };
 
   useEffect(() => {
