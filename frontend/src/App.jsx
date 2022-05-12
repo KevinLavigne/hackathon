@@ -3,7 +3,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Home from "./pages/Home";
 import NavBar from "./components/NavBar";
 import Page2 from "./pages/Page2";
-import Comparatif from "@pages/Comparatif";
+import Comparatif from "./pages/Comparatif";
 import Error404 from "./pages/error404";
 import PageProfil from "./pages/PageProfil";
 

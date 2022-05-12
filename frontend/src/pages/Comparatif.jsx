@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-import ProfileCard from "@components/ProfileCard";
+import ProfileCard from "../components/ProfileCard";
 
 function Comparatif() {
   const [array, setPg3] = useState([
@@ -45,9 +45,7 @@ function Comparatif() {
       score: "5",
     },
   ]);
-  {
-    console.log(array);
-  }
+  console.warn(setPg3);
   return (
     <div className="bg-color-comparatif">
       <h1 className="text-3xl font-bold text-center">Comparatif</h1>
