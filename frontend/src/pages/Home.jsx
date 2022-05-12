@@ -3,7 +3,7 @@ import Concept from "../components/Concept";
 
 export default function Home() {
   return (
-    <div className="flex justify-center flex items-center flex flex-wrap">
+    <div className="home-page flex justify-center flex items-center flex flex-wrap">
       <div>
         <Concept />
       </div>
