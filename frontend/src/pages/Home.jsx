@@ -1,4 +1,4 @@
-import Indentification from "../components/Indentification";
+import Identification from "../components/Identification";
 import Concept from "../components/Concept";
 
 export default function Home() {
@@ -8,7 +8,7 @@ export default function Home() {
         <Concept />
       </div>
       <div>
-        <Indentification />
+        <Identification />
       </div>
     </div>
   );

@@ -1,0 +1,17 @@
+.form-identification {
+  background-color: #68a357;
+}
+
+.input-indentification {
+  width: 15rem;
+  height: 2rem;
+  background-color: #f0edee;
+}
+
+#button-indentification {
+  background-color: #f0edee;
+  width: 10rem;
+  height: 2rem;
+  color: #68a357;
+  font-weight: bold;
+}
