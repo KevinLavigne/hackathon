@@ -2,6 +2,11 @@
 @tailwind components;
 @tailwind utilities;
 
+*{
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+}
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
@@ -61,4 +66,103 @@ button {
 
 .bg-navbar{
   background-color: #F0EDEE;
+}
+
+
+/****************
+** ACTION CARD **
+****************/
+
+.action-card-container {
+  width: 90%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-content: center;
+  border-radius: 0.75rem;
+  background-color: #C97064;
+  color: white;
+  text-align: center;
+  margin: 1rem auto;
+}
+
+details {
+  width: 90%;
+  position: relative;
+  margin-top: 19px;
+  margin-bottom: 18px;
+  margin: 0 auto;
+  display: flex;
+}
+
+details  summary {
+  width: 100%;
+  cursor: pointer;
+  list-style: none;
+  display: flex;
+}
+
+details::after {
+  content: "";
+  position: absolute;
+  height: 1px;
+  width: 100%;
+  left: 0;
+  bottom: -18px;
+  background-color: var(--divider_light-blue);
+}
+
+
+/* hide the arrow by default */
+details .hide {
+  display: none;
+}
+
+/* manage arrow in the box when open */
+details[open] .show {
+  display: none;
+}
+
+details[open] .hide {
+  display: block;
+}
+
+/* put the question in bold when open */
+details[open]  H2 {
+  font-weight: bold;
+}
+
+.action-card-summary{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.action-card-description{
+  display: flex;
+  align-items: center;
+  text-align: center;
+}
+.action-card-icon{
+  color: white;
+}
+.action-card-point{
+  width: 4rem;
+  text-align: center;
+  background-color: #32965D;
+  border-radius: 0.2rem;
+}*
+
+.action-card-validate{
+  padding: 0.3rem;
+  text-align: end;
+  background-color: #32965D;
+  border-radius: 0.2rem;
+}
+.action-card-titre{
+  padding: 0 0.2rem;
+}
+
+.action-card-text{
+  padding: 0 0.5rem;
 }
