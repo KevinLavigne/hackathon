@@ -54,22 +54,52 @@ function Graphique() {
      * données moyennes des utilisateurs   dataset[(un par un)].data[week]
      */
     const moyenne = [0];
-    for (let i = 0; i < jason.user.length - 1; i++) {
-      // user-s
-      for (let week = 0; week < jason.user[i].actions.length; week++) {
+    const userParSemaine = [];
+    const totalParSemaine = [];
+    for (let us = 0; us < jason.user.length - 1; us++) {
+      // users
+      for (let week = 0; week < jason.user[us].actions.length; week++) {
+        userParSemaine.push([0]);
+        totalParSemaine.push([0]);
+        // console.warn(totalParSemaine[week]);
+        totalParSemaine[week] =
+          parseInt(totalParSemaine[week]) +
+          parseInt(jason.user[us].actions[week].taken.length);
+        // );
+        userParSemaine[week] = parseInt(userParSemaine[week]) + 1;
+        console.warn(typeof userParSemaine[week]);
+        typeof userParSemaine[week] === "array" ? userParSemaine.pop() : "";
+        // console.warn(
+        //   `user: ${us}, semaine: ${week}, taken: ${jason.user[us].actions[week].taken.length}`
+        // );
+        // console.warn(`taken ${jason.user[us].actions[week].taken.length}`);
+
         // console.warn(
         //   `${jason.user[i].userFirstName}, week ${week}: ${jason.user[i].actions[week].taken.length}`
         // );
-        console.warn(moyenne[week[0]]);
-        moyenne[week[0]] += jason.user[i].actions[week].taken.length;
+        // console.warn(moyenne[week[0]]);
+        // moyenne[week[0]] += jason.user[i].actions[week].taken.length;
 
-        moyenne[week[1]]++;
+        // moyenne[week[1]]++;
         // console.warn(`${moyenne[week[0]]}/${moyenne[week[1]]}`);
         //ajoute taken.length à moyenne[week[0]] && ajoute 1 à moyenne[week[1]]  moyenne[semaine[0]]= total de tous les utilisateurs   [1]  nombre d'uitlisateurs
+        // console.warn(
+        //   `total semaine ${week}: ${totalParSemaine[week].toString()}`
+        // );
+        // console.warn(`user ${us} semaine ${week}: ${userParSemaine[week]}`);
       }
     }
-    for (let j = 0; j < moyenne.length; j++) {
-      moyenne[j[2]] = (moyenne[j[0]] / moyenne[j[1]]).toFixed(2);
+    // console.warn(userParSemaine);
+
+    // console.warn(totalParSemaine);
+    const moyenneParSemaine = [0];
+    for (let sem = 0; sem < totalParSemaine.length; sem++) {
+      moyenneParSemaine.push([0]);
+      moyenneParSemaine[sem] = (
+        totalParSemaine[sem] / userParSemaine[sem]
+      ).toFixed(2);
+      // console.warn(moyenneParSemaine[sem]);
+      // moyenne[j[2]] = (moyenne[j[0]] / moyenne[j[1]]).toFixed(2);
     }
 
     const activUser = 1;
