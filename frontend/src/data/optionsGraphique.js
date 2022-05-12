@@ -18,7 +18,7 @@ const options = {
       },
       display: true,
       title: {
-        display: false,
+        display: true,
         text: "Semaines",
       },
     },
@@ -33,8 +33,8 @@ const options = {
       display: true,
       title: {
         // titre de l'axe vertical
-        display: true,
-        text: ``,
+        display: false,
+        text: `toto`,
       },
     },
   },
