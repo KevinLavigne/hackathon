@@ -13,14 +13,14 @@ function NavBar() {
         <NavLink to="/">
           <li className="text-xl">Accueil</li>
         </NavLink>
-        <NavLink to="/Page1">
-          <li className="text-xl">Page1</li>
+        <NavLink to="/Profil">
+          <li className="text-xl">Profil</li>
         </NavLink>
         <NavLink to="/Page2">
           <li className="text-xl">Page2</li>
         </NavLink>
-        <NavLink to="/Page3">
-          <li className="text-xl">Page3</li>
+        <NavLink to="/Comparatif">
+          <li>Comparatif</li>
         </NavLink>
       </ul>
     </div>
