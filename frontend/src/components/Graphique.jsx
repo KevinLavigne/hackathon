@@ -37,10 +37,13 @@ function Graphique() {
   const prepareDataSet = (data, moyenne) => {
     /** Récupération du jeu de données */
     const dataSetProv = { ...dataSet };
+    console.warn();
     data.forEach((el) => {
       dataSetProv.labels.push(el.week);
       dataSetProv.datasets[0].data.push(el.taken.length);
-      dataSetProv.datasets[1].data.push(moyenne[el[2]]);
+    });
+    moyenne.forEach((el) => {
+      dataSetProv.datasets[1].data.push(el);
     });
     setDataSet(dataSetProv);
   };
@@ -51,55 +54,29 @@ function Graphique() {
    */
   const getStaticData = (jason) => {
     /**
-     * données moyennes des utilisateurs   dataset[(un par un)].data[week]
+     * calcul de la plus grande quantité de semaines pour un user
      */
-    const moyenne = [0];
-    const userParSemaine = [];
-    const totalParSemaine = [];
+    let maxWeeks = -10;
+    for (let us = 0; us < jason.user.length - 1; us++) {
+      maxWeeks = Math.max(parseInt(jason.user[us].actions.length), maxWeeks);
+    }
+
+    const userParSemaine = new Array(maxWeeks).fill(0);
+    const totalParSemaine = new Array(maxWeeks).fill(0);
+
     for (let us = 0; us < jason.user.length - 1; us++) {
       // users
       for (let week = 0; week < jason.user[us].actions.length; week++) {
-        userParSemaine.push([0]);
-        totalParSemaine.push([0]);
-        // console.warn(totalParSemaine[week]);
         totalParSemaine[week] =
           parseInt(totalParSemaine[week]) +
           parseInt(jason.user[us].actions[week].taken.length);
-        // );
+
         userParSemaine[week] = parseInt(userParSemaine[week]) + 1;
-        console.warn(typeof userParSemaine[week]);
-        typeof userParSemaine[week] === "array" ? userParSemaine.pop() : "";
-        // console.warn(
-        //   `user: ${us}, semaine: ${week}, taken: ${jason.user[us].actions[week].taken.length}`
-        // );
-        // console.warn(`taken ${jason.user[us].actions[week].taken.length}`);
-
-        // console.warn(
-        //   `${jason.user[i].userFirstName}, week ${week}: ${jason.user[i].actions[week].taken.length}`
-        // );
-        // console.warn(moyenne[week[0]]);
-        // moyenne[week[0]] += jason.user[i].actions[week].taken.length;
-
-        // moyenne[week[1]]++;
-        // console.warn(`${moyenne[week[0]]}/${moyenne[week[1]]}`);
-        //ajoute taken.length à moyenne[week[0]] && ajoute 1 à moyenne[week[1]]  moyenne[semaine[0]]= total de tous les utilisateurs   [1]  nombre d'uitlisateurs
-        // console.warn(
-        //   `total semaine ${week}: ${totalParSemaine[week].toString()}`
-        // );
-        // console.warn(`user ${us} semaine ${week}: ${userParSemaine[week]}`);
       }
     }
-    // console.warn(userParSemaine);
-
-    // console.warn(totalParSemaine);
-    const moyenneParSemaine = [0];
+    const moyenne = new Array(maxWeeks);
     for (let sem = 0; sem < totalParSemaine.length; sem++) {
-      moyenneParSemaine.push([0]);
-      moyenneParSemaine[sem] = (
-        totalParSemaine[sem] / userParSemaine[sem]
-      ).toFixed(2);
-      // console.warn(moyenneParSemaine[sem]);
-      // moyenne[j[2]] = (moyenne[j[0]] / moyenne[j[1]]).toFixed(2);
+      moyenne[sem] = (totalParSemaine[sem] / userParSemaine[sem]).toFixed(2);
     }
 
     const activUser = 1;
