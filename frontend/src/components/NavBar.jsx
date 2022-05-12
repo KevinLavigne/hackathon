@@ -13,7 +13,7 @@ function NavBar() {
         <li>Page2</li>
       </NavLink>
       <NavLink to="/Page3">
-        <li>Page3</li>
+        <li>Comparatif</li>
       </NavLink>
     </ul>
   );
