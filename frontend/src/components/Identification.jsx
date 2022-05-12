@@ -21,7 +21,7 @@ function Identification() {
         type="email"
         placeholder="Email"
       />
-      <Link to="/PageProfil">
+      <Link to="/Profil">
         <button
           id="button-indentification"
           className=" mt-4 mb-5 rounded-full "
