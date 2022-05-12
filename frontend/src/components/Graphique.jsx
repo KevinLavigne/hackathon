@@ -52,7 +52,7 @@ function Graphique() {
    * récupération des données du json
    * @param {jason} json
    */
-  const getStaticData = (jason) => {
+  const getStaticData = () => {
     /**
      * calcul de la plus grande quantité de semaines pour un user
      */
