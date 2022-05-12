@@ -11,7 +11,7 @@ function ProfileCard({ firstname, lastname, score, inscription }) {
       <h2>
         {firstname} {lastname}
       </h2>
-      <h3>{score && score[3].length}</h3>
+      <h3>{score && score[score.length - 1].taken.length}</h3>
       <h3>{inscription}</h3>
     </div>
   );
