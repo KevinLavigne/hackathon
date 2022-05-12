@@ -1,6 +1,6 @@
 import React from "react";
 import ActionCard from "../components/ActionCard";
-import ConvertGoogleSheet from "../services/ConvertGoogleSheet";
+// import ConvertGoogleSheet from "../services/ConvertGoogleSheet";
 import ExportContext from "../contexts/Context";
 
 function Page2() {
@@ -8,13 +8,11 @@ function Page2() {
   const [aFaire, setaFaire] = React.useState("TRUE");
   // const [pg2, setPg2] = useState([]);
   // console.warn(`${pg2} ${setPg2}`);
-  const { actionsList, setActionsList } = React.useContext(
-    ExportContext.Context
-  );
-  const actions = ConvertGoogleSheet(
+  const { actionsList } = React.useContext(ExportContext.Context);
+  /* const actions = ConvertGoogleSheet(
     "https://docs.google.com/spreadsheets/d/e/2PACX-1vTsY9ig9iBPQKlyIXHq0bPzodjWiqdcp4WSIIcxAGtEJ-l4hJsIaoIiH_Tx4TUyFyoHviWrfpS7Wbs2/pub?output=csv"
-  );
-  setActionsList(actions);
+  ); 
+  setActionsList(actions); */
 
   const CategoryList = [
     "Domicile",
@@ -40,6 +38,7 @@ function Page2() {
   return (
     <div>
       <div>Page2</div>
+      <p>{actionsList[0].fait}</p>
       <div className="page-action-selecteur">
         <div>
           <form className="page-action-form">

@@ -28,6 +28,12 @@ function ActionCard({ action }) {
     }, []);
   };
 
+  React.useEffect(() => {
+    if (action.fait === "TRUE") {
+      setLaClass("action-card-container-fait");
+    }
+  }, []);
+
   return (
     <div className={`${laclass}`}>
       <details>
