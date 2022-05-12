@@ -1,6 +1,5 @@
 // import { useState } from "react";
 import avatar from "../assets/Avatar_6.png";
-// import Graphique from "./components/Graphique";
 
 function PageProfil() {
   // const [pg1, setPg1] = useState([]);

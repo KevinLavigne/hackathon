@@ -9,7 +9,7 @@ function ProfileCard({ firstname, lastname, score, avatar, inscription }) {
       <h2>
         {firstname} {lastname}
       </h2>
-      <h3>{score}</h3>
+      <h3>{score && score[3].length}</h3>
       <h3>{inscription}</h3>
     </div>
   );

@@ -1,3 +1,4 @@
+/* eslint-disable */
 import { Helmet } from "react-helmet";
 import FaqPage from "../components/FaqPage";
 
