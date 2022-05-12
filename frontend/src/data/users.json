@@ -60,7 +60,3 @@
     ]
   }
 ]
-
-//   actions[0] === [week1.actions]
-//   actions[0].length === nb d'actions
-//   actions[0[...]].map sur tableau de sébastien

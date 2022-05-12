@@ -1,4 +1,5 @@
 function ProfileCard({ firstname, lastname, score, avatar, inscription }) {
+  const test = inscription && inscription.split("/");
   return (
     <div className="w-2/5 rounded-xl flex flex-col bg-profilCard justify-around content-center items-center mb-10">
       <img
@@ -9,7 +10,7 @@ function ProfileCard({ firstname, lastname, score, avatar, inscription }) {
       <h2>
         {firstname} {lastname}
       </h2>
-      <h3>{score}</h3>
+      <h3>{score && score[3].length}</h3>
       <h3>{inscription}</h3>
     </div>
   );
