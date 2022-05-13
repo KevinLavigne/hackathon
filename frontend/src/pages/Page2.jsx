@@ -36,8 +36,8 @@ function Page2() {
     setaFaire(e.target.value === "Tous" ? "TRUE" : "FALSE");
   };
   return (
-    <div>
-      <div>Page2</div>
+    <div className="action-page-bg-color-comparatif">
+      <h1 className="text-3xl font-bold text-center">Mes actions</h1>
       <div className="page-action-selecteur">
         <div>
           <form className="page-action-form">

@@ -14,6 +14,7 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: #32965d;
 }
 
 code {
@@ -178,6 +179,15 @@ button {
 ** ACTION CARD **
 ****************/
 
+.action-page-bg-color-comparatif {
+  background-color: #32965d;
+  width: 100%;
+}
+
+.action-page-bg-color-comparatif h1{
+  padding: 1rem 0;
+}
+
 .action-card-container {
   width: 90%;
   margin: 0 auto;
@@ -189,6 +199,7 @@ button {
   color: white;
   text-align: center;
   margin: 1rem auto;
+  padding: 1rem 0;
 }
 
 .action-card-container-fait {
@@ -198,7 +209,7 @@ button {
   justify-content: space-between;
   align-content: center;
   border-radius: 0.75rem;
-  background-color:#32965D;
+  background-color:#68A357;
   color: white;
   text-align: center;
   margin: 1rem auto;
@@ -268,7 +279,7 @@ details[open]  H2 {
 .action-card-point{
   width: 2rem;
   text-align: center;
-  background-color: #32965D;
+  background-color: #68A357;
   border-radius: 0.2rem;
 }*
 
@@ -277,7 +288,7 @@ details[open]  H2 {
   text-align: center;
   padding: 0.3rem;
   text-align: end;
-  background-color: #32965D;
+  background-color: #68A357;
   border-radius: 0.2rem;
 }
 .action-card-titre{
