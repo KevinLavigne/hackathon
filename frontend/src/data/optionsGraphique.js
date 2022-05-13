@@ -6,6 +6,7 @@
 
 const options = {
   responsive: true,
+  maintainAspectRatio: false,
   scales: {
     x: {
       // configuration de l'axe horizontal
@@ -18,6 +19,7 @@ const options = {
       },
       display: true,
       title: {
+        color: "rgb(250,250,250)",
         display: true,
         text: "Semaines",
       },
@@ -34,16 +36,17 @@ const options = {
       title: {
         // titre de l'axe vertical
         display: false,
-        text: `toto`,
       },
     },
   },
   plugins: {
     legend: {
+      labels: { color: "rgb(250,250,250)" },
       position: "top",
     },
     title: {
       display: true,
+      color: "rgb(255,255,255)",
       text: `titre`, // titre par défaut, remplacé via prepaConfig
     },
   },
@@ -56,18 +59,24 @@ const dataModel = {
   labels: [],
   datasets: [
     {
-      label: "Votre écoScore", // titre du premier graphique
+      label: "Votre écoScore",
+      labelColor: "rgb(255,255,255)", // titre du premier graphique
       data: [],
-      pointStyle: "dash",
-      radius: 0.1,
-      borderColor: "rgb(104, 163, 87)",
-      backgroundColor: "rgb(104, 163, 87)",
+      pointStyle: "circle",
+      radius: 4,
+      tension: 0.2,
+      borderWidth: 3,
+      borderColor: "rgb(255, 120, 0)",
+      backgroundColor: "rgb(150, 150, 93)",
     },
     {
       label: "Moyenne des utilisateurs", // titre du second graphique
       data: [],
-      pointStyle: "dash",
-      borderColor: "rgb(50, 150, 93)", // "rgb(93, 109, 126)",
+      pointStyle: "circle",
+      radius: 4,
+      tension: 0.2,
+      borderWidth: 4,
+      borderColor: "rgb(150,255,150)", // "rgb(93, 109, 126)",
       backgroundColor: "rgb(50, 150, 93)",
     },
   ],

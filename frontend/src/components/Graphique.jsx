@@ -95,9 +95,13 @@ function Graphique() {
   }, []);
   return (
     // affichage du composant graphique
-    <div className="graph_render_dd">
+    <div>
       {dataSet.labels.length > 0 && (
-        <Line data={dataSet} options={reglages.options} />
+        <Line
+          data={dataSet}
+          options={reglages.options}
+          style={{ height: "280px", width: "345px" }}
+        />
       )}
     </div>
   );
