@@ -25,7 +25,6 @@ function PageProfil() {
         <Graphique />
       </div>
       <div className="backgroundcolor-3 drop-shadow-2xl color-1 w-full h-96 m-100 p-5 flex flex-col items-center text-lg ">
-
         <h2 className="font-bold">MES ACTIONS EN COURS</h2>
         <div className="w-80">
           <ActionCard action={actionsList[1]} />
