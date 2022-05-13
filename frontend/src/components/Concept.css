@@ -18,7 +18,7 @@
   height: 2.5rem;
   color: #68a357;
   font-weight: bold;
-  position : absolute;
+  position: absolute;
 }
 #button-concept-2 {
   background-color: #f0edee;
@@ -26,6 +26,12 @@
   height: 2rem;
   color: #68a357;
   font-weight: bold;
+}
+
+#button-concept-2:focus {
+  background-color: #c97064;
+  color: #f0edee;
+  transition: 0.1s;
 }
 
 #button-concept:focus {
