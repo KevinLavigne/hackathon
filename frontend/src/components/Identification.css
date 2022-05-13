@@ -8,6 +8,7 @@
   background-color: #f0edee;
   transition: 0.5s;
   outline: none;
+  padding-left: 1rem;
 }
 
 .input-indentification:focus {
