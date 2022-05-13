@@ -1,5 +1,5 @@
 import React from "react";
-import avatar from "../assets/Avatar_6.png";
+import avatar from "../assets/avatar6.png";
 
 import Graphique from "../components/Graphique";
 import ActionCard from "../components/ActionCard";
