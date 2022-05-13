@@ -1,6 +1,6 @@
 import avatar from "../assets/avatar.jpg";
 
-function ProfileCard({ firstname, lastname, score, inscription }) {
+function ProfileCard({ firstname, score, inscription }) {
   return (
     <div className="w-2/5 rounded-xl flex flex-col bg-profilCard justify-around content-center items-center mb-10">
       <img
@@ -8,9 +8,7 @@ function ProfileCard({ firstname, lastname, score, inscription }) {
         src={avatar}
         alt="menber representation"
       />
-      <h2>
-        {firstname} {lastname}
-      </h2>
+      <h2>{firstname}</h2>
       <h3>{score && score[score.length - 1].taken.length}</h3>
       <h3>{inscription}</h3>
     </div>

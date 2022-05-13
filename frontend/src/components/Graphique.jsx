@@ -1,6 +1,6 @@
 /* eslint-disable */
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useContext } from "react";
 import { Line } from "react-chartjs-2";
 import {
   Chart as ChartJS,
@@ -12,7 +12,7 @@ import {
   Tooltip,
   Legend,
 } from "chart.js";
-import jason from "../data/users.json";
+import ExportContext from "../contexts/Context";
 import reglages from "../data/optionsGraphique";
 
 ChartJS.register(
@@ -26,6 +26,7 @@ ChartJS.register(
 );
 
 function Graphique() {
+  const { users } = useContext(ExportContext.Context);
   const [dataSet, setDataSet] = useState(reglages.dataModel);
   const prepaConfig = (data) => {
     // légendage
@@ -59,19 +60,19 @@ function Graphique() {
      * calcul de la plus grande quantité de semaines pour un user
      */
     let maxWeeks = -10;
-    for (let us = 0; us < jason.user.length - 1; us++) {
-      maxWeeks = Math.max(parseInt(jason.user[us].actions.length), maxWeeks);
+    for (let us = 0; us < users.length - 1; us++) {
+      maxWeeks = Math.max(parseInt(users[us].actions.length), maxWeeks);
     }
 
     const userParSemaine = new Array(maxWeeks).fill(0);
     const totalParSemaine = new Array(maxWeeks).fill(0);
 
-    for (let us = 0; us < jason.user.length - 1; us++) {
+    for (let us = 0; us < users.length - 1; us++) {
       // users
-      for (let week = 0; week < jason.user[us].actions.length; week++) {
+      for (let week = 0; week < users[us].actions.length; week++) {
         totalParSemaine[week] =
           parseInt(totalParSemaine[week]) +
-          parseInt(jason.user[us].actions[week].taken.length);
+          parseInt(users[us].actions[week].taken.length);
 
         userParSemaine[week] = parseInt(userParSemaine[week]) + 1;
       }
@@ -85,12 +86,12 @@ function Graphique() {
     /**
      * données de l'utilisateur
      */
-    prepareDataSet(jason.user[activUser].actions, moyenne); //
-    prepaConfig(jason.user[activUser]);
+    prepareDataSet(users[activUser].actions, moyenne); //
+    prepaConfig(users[activUser]);
   };
 
   useEffect(() => {
-    getStaticData(jason);
+    getStaticData(users);
   }, []);
   return (
     // affichage du composant graphique
