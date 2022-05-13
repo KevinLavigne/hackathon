@@ -5,11 +5,10 @@ import Graphique from "../components/Graphique";
 import ActionCard from "../components/ActionCard";
 import ExportContext from "../contexts/Context";
 
-
 function PageProfil() {
   // const [pg1, setPg1] = useState([]);
   // console.warn(`${pg1} ${setPg1}`);
-  const { actionsList } = React.useContext(ExportContext.Context);
+  const { actionsList, users } = React.useContext(ExportContext.Context);
   actionsList[1].fait = "TRUE";
   actionsList[4].fait = "TRUE";
   actionsList[25].fait = "TRUE";
@@ -47,8 +46,9 @@ function PageProfil() {
         type="submit"
         className="p-10 m-100 text-white bg-gradient-to-r from-red-400 via-red-500 to-red-600 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-red-300 dark:focus:ring-red-800 shadow-lg shadow-red-500/50 dark:shadow-lg dark:shadow-red-800/80 font-medium rounded-lg text-l text-center"
       >
-        Mon score :
+        Mon score : {users.length > 0 && users[1].actions[5].taken.length}
       </button>
+      {/* {console.log(users[1].actions[5].taken.length)} */}
     </div>
   );
 }
