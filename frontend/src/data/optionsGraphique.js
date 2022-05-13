@@ -6,6 +6,7 @@
 
 const options = {
   responsive: true,
+  maintainAspectRatio: false,
   scales: {
     x: {
       // configuration de l'axe horizontal
@@ -34,7 +35,6 @@ const options = {
       title: {
         // titre de l'axe vertical
         display: false,
-        text: `toto`,
       },
     },
   },
@@ -59,15 +59,16 @@ const dataModel = {
       label: "Votre écoScore", // titre du premier graphique
       data: [],
       pointStyle: "dash",
-      radius: 0.1,
-      borderColor: "rgb(104, 163, 87)",
+      radius: 1,
+      borderColor: "rgb(255, 120, 0)",
       backgroundColor: "rgb(104, 163, 87)",
     },
     {
       label: "Moyenne des utilisateurs", // titre du second graphique
       data: [],
       pointStyle: "dash",
-      borderColor: "rgb(50, 150, 93)", // "rgb(93, 109, 126)",
+      radius: 1,
+      borderColor: "rgb(255,255,255)", // "rgb(93, 109, 126)",
       backgroundColor: "rgb(50, 150, 93)",
     },
   ],

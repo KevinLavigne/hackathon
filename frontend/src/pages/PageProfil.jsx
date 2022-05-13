@@ -13,13 +13,10 @@ function PageProfil() {
         <p className="text-lg">DUPONT_</p>
         <p className="text-lg">Damien</p>
       </div>
-      <div className="backgroundcolor-3 color-1 drop-shadow-2xl w-full h-96 m-100 p-20 flex flex-col items-center text-lg">
-        <h2 className="font-bold">GRAPHIQUE DE DAMIEN</h2>
-        <div>
-          <Graphique />
-        </div>
+      <div className="backgroundcolor-3 color-1 w-full flex justify-center">
+        <Graphique />
       </div>
-      <div className="backgroundcolor-3 drop-shadow-2xl color-1 w-full h-96 m-100 p-20 flex flex-col items-center text-lg ">
+      <div className="backgroundcolor-3 drop-shadow-2xl color-1 w-full h-96 m-100 p-5 flex flex-col items-center text-lg ">
         <h2 className="font-bold">MES ACTIONS EN COURS</h2>
         <ul>
           <li>action 1</li>
