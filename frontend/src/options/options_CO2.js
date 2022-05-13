@@ -57,15 +57,15 @@ const dataModel = {
       data: [],
       pointStyle: "dash",
       radius: 0.1,
-      borderColor: "rgba(136, 78, 160,0.8)",
-      backgroundColor: "rgba(136, 78, 160, 0.8)",
+      borderColor: "rgba(255, 255, 255,0.8)",
+      backgroundColor: "rgba(255, 255, 255, 0.8)",
     },
     {
       label: "Tendance moyenne (évolution)", // titre du second graphique
       data: [],
       pointStyle: "dash",
-      borderColor: "rgba(52,73,94, 0.8)", // "rgb(93, 109, 126)",
-      backgroundColor: "rgba(52, 73, 94, 0.8)",
+      borderColor: "rgba(255,255,255, 0.8)", // "rgb(93, 109, 126)",
+      backgroundColor: "rgba(255, 255, 255, 0.8)",
     },
   ],
 };

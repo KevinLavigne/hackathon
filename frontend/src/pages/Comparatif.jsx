@@ -1,23 +1,19 @@
-import { useState, useEffect } from "react";
+import { useContext } from "react";
 
 import ProfileCard from "../components/ProfileCard";
-import jason from "../data/users.json";
+import ExportContext from "../contexts/Context";
 
 function Comparatif() {
-  const [array, setPg3] = useState([{}]);
+  const { users } = useContext(ExportContext.Context);
 
-  useEffect(() => {
-    setPg3(jason.user);
-  }, []);
   return (
     <div className="bg-color-comparatif">
       <h1 className="text-3xl font-bold text-center">Comparatif</h1>
       <div className="flex pt-5 flex-row flex-wrap justify-around content-center items-center">
-        {array.length > 0 &&
-          array.map((profile) => (
+        {users.length > 0 &&
+          users.map((profile) => (
             <ProfileCard
               firstname={profile.userFirstName}
-              lastname={profile.userLastName}
               inscription={profile.begin}
               score={profile.actions}
             />

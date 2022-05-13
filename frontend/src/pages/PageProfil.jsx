@@ -1,7 +1,10 @@
 import React from "react";
 import avatar from "../assets/Avatar_6.png";
+
+import Graphique from "../components/Graphique";
 import ActionCard from "../components/ActionCard";
 import ExportContext from "../contexts/Context";
+
 
 function PageProfil() {
   // const [pg1, setPg1] = useState([]);
@@ -21,7 +24,9 @@ function PageProfil() {
       </div>
       <div className="backgroundcolor-3 color-1 drop-shadow-2xl w-full h-96 m-100 p-20 flex flex-col items-center text-lg">
         <h2 className="font-bold">GRAPHIQUE DE DAMIEN</h2>
-        {/* <div><Graphique/></div> */}
+        <div>
+          <Graphique />
+        </div>
       </div>
       <div className="backgroundcolor-3 drop-shadow-2xl color-1 w-full h-96 m-100 p-20 flex flex-col items-center text-lg ">
         <h2 className="font-bold">MES ACTIONS EN COURS</h2>
