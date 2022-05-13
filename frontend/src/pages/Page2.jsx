@@ -26,7 +26,7 @@ function Page2() {
     "Numerique",
   ];
 
-  const ValideList = ["Non validé"];
+  const ValideList = ["Non validées"];
 
   const handleOnChangeCategoryList = (e) => {
     setselectedCategory(e.target.value);
@@ -64,7 +64,7 @@ function Page2() {
                 onChange={(e) => handleOnChangeValideList(e)}
               >
                 <option value="Tous" selected>
-                  Tous
+                  Toutes
                 </option>
                 {ValideList.map((category) => {
                   return <option value={category}>{category}</option>;

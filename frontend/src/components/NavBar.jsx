@@ -41,7 +41,7 @@ function NavBar() {
           </NavLink>
           <NavLink to="/Page2">
             <li className="text-xl" onClick={() => handleShowMenu()}>
-              Page2
+              Mes actions
             </li>
           </NavLink>
           <NavLink

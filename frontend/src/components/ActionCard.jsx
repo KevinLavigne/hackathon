@@ -58,7 +58,7 @@ function ActionCard({ action }) {
         </summary>
         <div className="action-card-description">
           <div className="action-card-point">
-            <p>{action.points}</p>
+            <p>{action.points} pts</p>
           </div>
           <div className="action-card-text">
             <p>{action.description}</p>

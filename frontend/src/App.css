@@ -277,7 +277,8 @@ details[open]  H2 {
   color: white;
 }
 .action-card-point{
-  width: 2rem;
+  width: 3rem;
+  padding: 0 0.5rem;
   text-align: center;
   background-color: #68A357;
   border-radius: 0.2rem;
@@ -292,7 +293,7 @@ details[open]  H2 {
   border-radius: 0.2rem;
 }
 .action-card-titre{
-  padding: 0 0.2rem;
+  padding: 0.5rem 0.2rem;
 }
 
 .action-card-text{
