@@ -1,0 +1,11 @@
+.navbar-button {
+  color: #f0edee;
+  font-weight: bold;
+  width: 25rem;
+  height: 4rem;
+}
+
+.navbar-button:focus {
+  background-color: #c97064;
+  transition: 0.1s;
+}

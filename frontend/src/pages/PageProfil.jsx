@@ -18,28 +18,26 @@ function PageProfil() {
       <h1 className="color-1 m-7 font-extrabold text-4xl">TON PROFIL</h1>
       <img src={avatar} alt="avatar par défaut" className="avatar" />
       <div className="flex flex-row color-1 m-7 ">
-        <p className="text-lg">DUPONT_</p>
-        <p className="text-lg">Damien</p>
+        <p className="text-lg pr-1">{users[1].userLastName}</p>
+        <p className="text-lg">{users[1].userFirstName}</p>
       </div>
-      <div className="backgroundcolor-3 color-1 drop-shadow-2xl w-full h-96 m-100 p-20 flex flex-col items-center text-lg">
-        <h2 className="font-bold">GRAPHIQUE DE DAMIEN</h2>
-        <div>
-          <Graphique />
-        </div>
+      <div className="backgroundcolor-3 color-1 w-full flex justify-center">
+        <Graphique />
       </div>
-      <div className="backgroundcolor-3 drop-shadow-2xl color-1 w-full m-100 p-20 flex flex-col items-center text-lg ">
+      <div className="backgroundcolor-3 drop-shadow-2xl color-1 w-full h-96 m-100 p-5 flex flex-col items-center text-lg ">
+
         <h2 className="font-bold">MES ACTIONS EN COURS</h2>
         <div className="w-80">
           <ActionCard action={actionsList[1]} />
         </div>
         <div className="w-80">
-          <ActionCard className="w-80" action={actionsList[4]} />{" "}
+          <ActionCard className="w-80" action={actionsList[4]} />
         </div>
         <div className="w-80">
-          <ActionCard className="w-80" action={actionsList[25]} />{" "}
+          <ActionCard className="w-80" action={actionsList[25]} />
         </div>
         <div className="w-80">
-          <ActionCard className="w-80" action={actionsList[54]} />{" "}
+          <ActionCard className="w-80" action={actionsList[54]} />
         </div>
       </div>
       <button
