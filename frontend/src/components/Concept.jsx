@@ -28,7 +28,6 @@ function Concept() {
           Voir le concept
         </button>
       </div>
-
       <div className=" border-concept rounded-lg h-60 mt-6 w-80 flex justify-center flex items-center flex-col">
         <p className="text-center mt-2 pl-2 pr-2">
           Si tu tiens cette application entre les mains, c est certainement
