@@ -22,7 +22,6 @@ function Provider({ children }) {
     <Context.Provider
       value={{
         actionsList,
-        setActionsList,
         users,
       }}
     >

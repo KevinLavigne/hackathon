@@ -15,15 +15,24 @@ function ActionCard({ action }) {
   const { actionsList, setActionsList } = React.useContext(
     ExportContext.Context
   );
+  const { users, setUsers } = React.useContext(ExportContext.Context);
 
   const [classCheck, setClassCheck] = React.useState("block");
+
   const handleOnClickValidate = () => {
     setClassCheck("none");
     console.warn(classCheck);
     const actionTemp = action;
     actionTemp.fait = "TRUE";
+    const usersTemp = users;
+    usersTemp[1].actions[5].taken.push(parseInt(actionTemp.id));
     React.useEffect(() => {
-      setActionsList(actionsList.splice(actionTemp.id - 1, 1, actionTemp));
+      const inject = actionsList.splice(actionTemp.id - 1, 1, actionTemp);
+      setActionsList(inject);
+    }, []);
+    React.useEffect(() => {
+      const inject = users.splice(1, 1, usersTemp[1]);
+      setUsers(inject);
     }, []);
   };
 
@@ -58,7 +67,7 @@ function ActionCard({ action }) {
         </summary>
         <div className="action-card-description">
           <div className="action-card-point">
-            <p>{action.points}</p>
+            <p>{action.points} pts</p>
           </div>
           <div className="action-card-text">
             <p>{action.description}</p>
