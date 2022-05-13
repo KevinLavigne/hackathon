@@ -200,6 +200,7 @@ button {
   text-align: center;
   margin: 1rem auto;
   padding: 1rem 0;
+  border: 1px solid black;
 }
 
 .action-card-container-fait {
@@ -213,6 +214,7 @@ button {
   color: white;
   text-align: center;
   margin: 1rem auto;
+  border: 1px solid black;
 }
 
 details {

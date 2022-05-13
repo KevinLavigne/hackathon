@@ -1,9 +1,16 @@
-// import { useState } from "react";
+import React from "react";
 import avatar from "../assets/Avatar_6.png";
+import ActionCard from "../components/ActionCard";
+import ExportContext from "../contexts/Context";
 
 function PageProfil() {
   // const [pg1, setPg1] = useState([]);
   // console.warn(`${pg1} ${setPg1}`);
+  const { actionsList } = React.useContext(ExportContext.Context);
+  actionsList[1].fait = "TRUE";
+  actionsList[4].fait = "TRUE";
+  actionsList[25].fait = "TRUE";
+  actionsList[54].fait = "TRUE";
   return (
     <div className="backgroundcolor-4 flex flex-col items-center p-10">
       <h1 className="color-1 m-7 font-extrabold text-7xl">TON PROFIL</h1>
@@ -18,13 +25,10 @@ function PageProfil() {
       </div>
       <div className="backgroundcolor-3 drop-shadow-2xl color-1 w-full h-96 m-100 p-20 flex flex-col items-center text-lg ">
         <h2 className="font-bold">MES ACTIONS EN COURS</h2>
-        <ul>
-          <li>action 1</li>
-          <li>action 2</li>
-          <li>action 3</li>
-          <li>action 4</li>
-          <li>action 5</li>
-        </ul>
+        <ActionCard action={actionsList[1]} />
+        <ActionCard action={actionsList[4]} />
+        <ActionCard action={actionsList[25]} />
+        <ActionCard action={actionsList[54]} />
       </div>
       <button
         type="submit"
