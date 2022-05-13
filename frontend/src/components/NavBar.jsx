@@ -14,7 +14,7 @@ function NavBar() {
         <div className="w-1/6">
           <img className="w-20" src={logo} alt="logo du site" />
         </div>
-        <h1 className="text-3xl font-bold w-3/5 text-center">Save Our Self!</h1>
+        <h1 className="text-3xl font-bold w-3/5 text-center">Save Ourselves</h1>
         <div className="w-1/6 flex justify-end">
           <button
             type="button"
