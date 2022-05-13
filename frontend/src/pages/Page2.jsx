@@ -26,7 +26,7 @@ function Page2() {
     "Numerique",
   ];
 
-  const ValideList = ["Non validé"];
+  const ValideList = ["Non validées"];
 
   const handleOnChangeCategoryList = (e) => {
     setselectedCategory(e.target.value);
@@ -36,8 +36,8 @@ function Page2() {
     setaFaire(e.target.value === "Tous" ? "TRUE" : "FALSE");
   };
   return (
-    <div>
-      <div>Page2</div>
+    <div className="action-page-bg-color-comparatif">
+      <h1 className="text-3xl font-bold text-center">Mes actions</h1>
       <div className="page-action-selecteur">
         <div>
           <form className="page-action-form">
@@ -64,7 +64,7 @@ function Page2() {
                 onChange={(e) => handleOnChangeValideList(e)}
               >
                 <option value="Tous" selected>
-                  Tous
+                  Toutes
                 </option>
                 {ValideList.map((category) => {
                   return <option value={category}>{category}</option>;
