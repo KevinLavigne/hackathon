@@ -2,6 +2,7 @@ import { HashLink as NavLink } from "react-router-hash-link";
 import { useState } from "react";
 
 import logo from "../assets/logo-sans-fond.png";
+import "./NavBar.css";
 
 function NavBar() {
   const [showMenu, setShowMenu] = useState(false);
@@ -30,26 +31,40 @@ function NavBar() {
       <div className="menuWrapper">
         <ul className="flex justify-around w-1/4 flex-wrap">
           <NavLink to="/">
-            <li className="text-xl" onClick={() => handleShowMenu()}>
+            <button
+              type="button"
+              className="navbar-button text-xl"
+              onClick={() => handleShowMenu()}
+            >
               Accueil
-            </li>
+            </button>
           </NavLink>
           <NavLink to="/Profil">
-            <li className="text-xl" onClick={() => handleShowMenu()}>
+            <button
+              type="button"
+              className="navbar-button text-xl"
+              onClick={() => handleShowMenu()}
+            >
               Profil
-            </li>
+            </button>
           </NavLink>
           <NavLink to="/Page2">
-            <li className="text-xl" onClick={() => handleShowMenu()}>
+            <button
+              type="button"
+              className="navbar-button text-xl"
+              onClick={() => handleShowMenu()}
+            >
               Mes actions
-            </li>
+            </button>
           </NavLink>
           <NavLink
             className="text-xl"
             to="/Comparatif"
             onClick={() => handleShowMenu()}
           >
-            <li>Comparatif</li>
+            <button type="button" className="navbar-button">
+              Comparatif
+            </button>
           </NavLink>
         </ul>
       </div>
