@@ -1,5 +1,5 @@
 import React from "react";
-import avatar from "../assets/Avatar_6.png";
+import avatar from "../assets/avatar6.png";
 
 import Graphique from "../components/Graphique";
 import ActionCard from "../components/ActionCard";
@@ -15,7 +15,7 @@ function PageProfil() {
   actionsList[54].fait = "TRUE";
   return (
     <div className="backgroundcolor-4 flex flex-col items-center p-10">
-      <h1 className="color-1 m-7 font-extrabold text-7xl">TON PROFIL</h1>
+      <h1 className="color-1 m-7 font-extrabold text-4xl">TON PROFIL</h1>
       <img src={avatar} alt="avatar par défaut" className="avatar" />
       <div className="flex flex-row color-1 m-7 ">
         <p className="text-lg">DUPONT_</p>
